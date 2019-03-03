@@ -22,7 +22,7 @@ Noice is Not Noice, a noicer fork...
 
 <p align="center"><i>nnn in action! (Thanks Luke Smith for the video!)</i></a></p>
 
-`nnn` is smooth... like butter. It's also probably one of the fastest and most lightweight file managers you have ever used.
+`nnn` is smooth... like butter. It's also one of the fastest and most lightweight file managers you have ever used. It comes in a `~55KB` binary using `~4MB` resident memory at runtime.
 
 `nnn` integrates seamlessly with your DE and favourite GUI utilities, has a unique _navigate-as-you-type_ mode with auto-select, disk usage analyzer mode, bookmarks, contexts, application launcher, familiar navigation shortcuts, subshell spawning, quick notes and much more.
 
@@ -123,8 +123,6 @@ It runs on Linux, macOS, Raspberry Pi, BSD, Cygwin, Linux subsystem for Windows 
 - Highly optimized, static analysis integrated code
 - Available on many distros
 
-Intrigued? Find out [HOW](https://github.com/jarun/nnn/wiki/performance-factors).
-
 #### INSTALLATION
 
 #### Library dependencies
@@ -170,10 +168,9 @@ Intrigued? Find out [HOW](https://github.com/jarun/nnn/wiki/performance-factors)
 - [Ubuntu](https://packages.ubuntu.com/search?keywords=nnn&searchon=names&exact=1) (`apt-get install nnn`)
 - [Void Linux](https://github.com/void-linux/void-packages/tree/master/srcpkgs/nnn) (`xbps-install -S nnn`)
 
-
 #### Release packages
 
-Packages for Arch Linux, CentOS, Debian, Fedora, Solus, and Ubuntu are available with the [latest stable release](https://github.com/jarun/nnn/releases/latest).
+Packages for Arch Linux, CentOS, Debian, Fedora and Ubuntu are available with the [latest stable release](https://github.com/jarun/nnn/releases/latest).
 
 #### From source
 
@@ -190,7 +187,7 @@ To cook yourself, download the [latest stable release](https://github.com/jarun/
 
 #### Shell completion
 
-Search keyword and option completion scripts for Bash, Fish and Zsh can be found in respective subdirectories of [`scripts/auto-completion/`](scripts/auto-completion). Please refer to your shell's manual for installation instructions.
+Option completion scripts for Bash, Fish and Zsh can be found in respective subdirectories of [`scripts/auto-completion/`](scripts/auto-completion). Please refer to your shell's manual for installation instructions.
 
 #### USAGE
 
@@ -331,7 +328,7 @@ Common use cases:
 - type `\.mkv` to list all MKV files
 - use `.*` to match any character (_sort of_ fuzzy search)
 
-There is a program opton to filter entries by substring match.
+There is a program option to filter entries by substring match instead of regex.
 
 If `nnn` is invoked as root or the environment variable `NNN_SHOW_HIDDEN` is set the default filter will also match hidden files.
 
