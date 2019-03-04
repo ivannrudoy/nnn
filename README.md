@@ -61,7 +61,6 @@ It runs on Linux, macOS, Raspberry Pi, BSD, Cygwin, Linux subsystem for Windows 
   - [Configuration](#configuration)
   - [Help](#help)
 - [Quickstart](#quickstart)
-- [How to](#how-to)
 - [Troubleshooting](#troubleshooting)
   - [Tmux configuration](#tmux-configuration)
   - [BSD terminal issue](#bsd-terminal-issue)
@@ -135,8 +134,8 @@ It runs on Linux, macOS, Raspberry Pi, BSD, Cygwin, Linux subsystem for Windows 
 | --- | --- |
 | xdg-open (Linux), open(1) (macOS), cygstart (Cygwin) | desktop opener |
 | file | determine file type |
-| cp, mv, rm, xargs (from findutils on Linux)  | copy, move and remove files |
-| mediainfo, exiftool | multimedia file details |
+| coreutils (cp, mv, rm), findutils (xargs) | copy, move and remove files |
+| mediainfo or exiftool | multimedia file details |
 | atool, patool ([integration](https://github.com/jarun/nnn/wiki/How-to#integrate-patool)) | create, list and extract archives |
 | vidir (from moreutils) | batch rename dir entries |
 | vlock (Linux), bashlock (macOS), lock(1) (BSD) | terminal locker |
@@ -395,11 +394,10 @@ To lookup keyboard shortcuts at runtime, press <kbd>?</kbd>.
        export NNN_USE_EDITOR=1
 4. Run `n`.
 5. Don't memorize keys. Arrows, <kbd>/</kbd> and <kbd>q</kbd> suffice. Press <kbd>?</kbd> for help on keyboard shortcuts anytime.
-6. For additional functionality [setup custom scripts](https://github.com/jarun/nnn/wiki/How-to#run-custom-scripts).
+6. The prompt can be used as a launcher and to run commands.
 
-#### HOW TO
-
-Please visit the [How to](https://github.com/jarun/nnn/wiki/How-to) wiki page.
+- For additional functionality [setup custom scripts](https://github.com/jarun/nnn/wiki/How-to#run-custom-scripts).
+- Visit the [How to](https://github.com/jarun/nnn/wiki/How-to) for many more specific usecases.
 
 #### TROUBLESHOOTING
 
@@ -408,6 +406,8 @@ Please visit the [How to](https://github.com/jarun/nnn/wiki/How-to) wiki page.
 `nnn` might not handle keypresses correctly when used with tmux (see issue #104 for more details). Set `TERM=xterm-256color` to address it.
 
 ##### BSD terminal issue
+
+TLDR: Use the keybind <kbd>K</kbd> to toggle selection if you are having issues with <kbd>^Y</kbd>.
 
 By default in OpenBSD & FreeBSD (and probably on macOS as well), `stty` maps <kbd>^Y</kbd> to `DSUSP`. This means that typing <kbd>^Y</kbd> will suspend `nnn` as if you typed <kbd>^Z</kbd> (you can bring `nnn` back to the foreground by issuing `fg`) instead of entering multi-copy mode. You can check this with `stty -a`. If it includes the text `dsusp = ^Y`, issuing `stty dsusp undef` will disable this `DSUSP` and let `nnn` receive the <kbd>^Y</kbd> instead.
 
